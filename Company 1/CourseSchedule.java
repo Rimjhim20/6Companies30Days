@@ -1,6 +1,6 @@
 class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-         ArrayList<Integer>[] adj = new ArrayList[numCourses]
+         ArrayList<Integer>[] adj = new ArrayList[numCourses];
          for(int i=0;i<numCourses;++i)
          adj[i] = new ArrayList();
          for(int[] pre: prerequisites)
@@ -14,13 +14,13 @@ class Solution {
          }
             return true;
     }
-    private boolean dfs(ArrayList<Integer>[] adj, int[] visited, int v){
-        if(visited[v]==1) return false;
-        visited[v] =1;
-        for(int ad :  adj[v]){
-        if(!dfs(adj,visited,ad)) return false;
+  private boolean dfs(ArrayList<Integer>[] adj,int[] visited,int v){
+        if(visited[v] ==1) return false;
+        if(visited[v] ==2)return true;
+        visited[v]=1;
+        for(int ad:adj[v])
+            if(!dfs(adj,visited,ad)) return false;
         visited[v]=2;
-        }
         return true;
     }
 }
