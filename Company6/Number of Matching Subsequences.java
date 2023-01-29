@@ -23,8 +23,7 @@ class Solution {
                     i++;
                 }
             }
-            
-            if(j==temp.length){
+            if(j==temp.length) {
                 ans+=map.get(str);
             }
             
